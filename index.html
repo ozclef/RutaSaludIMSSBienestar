@@ -1,93 +1,146 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
   <meta charset="UTF-8">
 
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    content="
+      width=device-width,
+      initial-scale=1.0,
+      maximum-scale=1.0,
+      user-scalable=no
+    "
   >
 
-  <title>Rutas de la Salud</title>
+  <title>
+    Rutas de la Salud
+  </title>
+
+  <!-- =========================
+       ICONOS
+  ========================= -->
 
   <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    href="
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
+    "
     rel="stylesheet"
   >
+
+  <!-- =========================
+       ESTILOS
+  ========================= -->
 
   <style>
 
     *{
+
       margin:0;
       padding:0;
+
       box-sizing:border-box;
+
       font-family:
         'Segoe UI',
         sans-serif;
+
     }
 
     body{
 
       width:100%;
+
       min-height:100vh;
 
+      overflow:hidden;
+
       background:
+
         linear-gradient(
+
           135deg,
+
           #0f172a,
           #111827,
           #1e293b
-        );
 
-      overflow:hidden;
+        );
 
     }
 
     .app-shell{
 
       width:100%;
+
       height:100vh;
 
       display:flex;
+
       flex-direction:column;
 
     }
 
     /* =========================
-       HEADER
+       TOPBAR
     ========================= */
 
     .topbar{
 
       width:100%;
-      height:70px;
 
-      background:
-        rgba(15,23,42,.95);
-
-      backdrop-filter:blur(12px);
-
-      border-bottom:
-        1px solid rgba(255,255,255,.08);
+      min-height:68px;
 
       display:flex;
+
       align-items:center;
+
       justify-content:space-between;
 
-      padding:0 24px;
+      gap:18px;
+
+      padding:12px 22px;
+
+      background:
+
+        rgba(15,23,42,.94);
+
+      backdrop-filter:blur(14px);
+
+      border-bottom:
+
+        1px solid rgba(
+          255,
+          255,
+          255,
+          .06
+        );
+
+      box-shadow:
+
+        0 4px 20px rgba(
+          0,
+          0,
+          0,
+          .25
+        );
 
       z-index:100;
 
-      box-shadow:
-        0 4px 20px rgba(0,0,0,.25);
-
     }
+
+    /* =========================
+       BRAND
+    ========================= */
 
     .brand{
 
       display:flex;
+
       align-items:center;
+
       gap:14px;
 
       color:white;
@@ -97,88 +150,157 @@
     .brand-logo{
 
       width:48px;
+
       height:48px;
 
       border-radius:16px;
 
       background:
+
         linear-gradient(
+
           135deg,
+
           #2563eb,
           #06b6d4
+
         );
 
       display:flex;
+
       align-items:center;
+
       justify-content:center;
 
       font-size:22px;
 
       box-shadow:
-        0 8px 18px rgba(37,99,235,.35);
+
+        0 8px 18px rgba(
+          37,
+          99,
+          235,
+          .35
+        );
+
+      flex-shrink:0;
 
     }
 
-    .brand h1{
+    .brand-text{
 
-      font-size:20px;
-      font-weight:700;
+      display:flex;
+
+      flex-direction:column;
+
+    }
+
+    .brand-text h1{
+
+      font-size:28px;
+
+      font-weight:800;
+
+      color:white;
+
+      line-height:1.1;
 
     }
 
-    .brand span{
+    .brand-text span{
 
-      font-size:12px;
-      opacity:.7;
+      font-size:13px;
+
+      color:#94a3b8;
 
     }
+
+    /* =========================
+       ACTIONS
+    ========================= */
 
     .topbar-actions{
 
       display:flex;
+
       align-items:center;
+
       gap:12px;
+
+      flex-wrap:wrap;
 
     }
 
+    /* =========================
+       STATUS
+    ========================= */
+
     .status-pill{
 
-      padding:10px 16px;
+      height:42px;
+
+      padding:0 16px;
 
       border-radius:999px;
 
       background:
-        rgba(16,185,129,.15);
+
+        rgba(16,185,129,.14);
 
       color:#10b981;
 
       font-size:13px;
-      font-weight:600;
+
+      font-weight:700;
 
       border:
-        1px solid rgba(16,185,129,.3);
+
+        1px solid rgba(
+          16,
+          185,
+          129,
+          .22
+        );
+
+      display:flex;
+
+      align-items:center;
+
+      gap:8px;
 
     }
+
+    /* =========================
+       BUTTON
+    ========================= */
 
     .btn-open{
 
       border:none;
+
       outline:none;
 
-      padding:12px 18px;
+      height:44px;
+
+      padding:0 18px;
 
       border-radius:14px;
 
       background:
+
         linear-gradient(
+
           135deg,
+
           #2563eb,
           #3b82f6
+
         );
 
       color:white;
 
-      font-weight:600;
+      font-weight:700;
+
       font-size:14px;
 
       cursor:pointer;
@@ -186,17 +308,26 @@
       transition:.25s ease;
 
       display:flex;
+
       align-items:center;
+
       gap:10px;
 
       box-shadow:
-        0 10px 20px rgba(37,99,235,.35);
+
+        0 10px 20px rgba(
+          37,
+          99,
+          235,
+          .28
+        );
 
     }
 
     .btn-open:hover{
 
-      transform:translateY(-2px);
+      transform:
+        translateY(-2px);
 
     }
 
@@ -208,7 +339,7 @@
 
       flex:1;
 
-      padding:18px;
+      padding:12px;
 
       overflow:hidden;
 
@@ -217,20 +348,34 @@
     .iframe-container{
 
       width:100%;
+
       height:100%;
 
-      border-radius:24px;
+      border-radius:22px;
 
       overflow:hidden;
 
       border:
-        1px solid rgba(255,255,255,.08);
+
+        1px solid rgba(
+          255,
+          255,
+          255,
+          .06
+        );
 
       background:
-        rgba(255,255,255,.04);
+
+        rgba(255,255,255,.03);
 
       box-shadow:
-        0 20px 50px rgba(0,0,0,.35);
+
+        0 20px 50px rgba(
+          0,
+          0,
+          0,
+          .35
+        );
 
       position:relative;
 
@@ -239,6 +384,7 @@
     iframe{
 
       width:100%;
+
       height:100%;
 
       border:none;
@@ -247,24 +393,37 @@
 
     }
 
+    /* =========================
+       LOADER
+    ========================= */
+
     .loading-overlay{
 
       position:absolute;
+
       inset:0;
 
       background:
+
         linear-gradient(
+
           135deg,
-          rgba(15,23,42,.95),
-          rgba(30,41,59,.95)
+
+          rgba(15,23,42,.96),
+
+          rgba(30,41,59,.96)
+
         );
 
       display:flex;
+
       flex-direction:column;
+
       align-items:center;
+
       justify-content:center;
 
-      gap:20px;
+      gap:18px;
 
       z-index:10;
 
@@ -274,31 +433,47 @@
 
     .spinner{
 
-      width:72px;
-      height:72px;
+      width:64px;
+
+      height:64px;
 
       border-radius:50%;
 
       border:
-        6px solid rgba(255,255,255,.12);
+
+        5px solid rgba(
+          255,
+          255,
+          255,
+          .12
+        );
 
       border-top:
-        6px solid #3b82f6;
 
-      animation:spin 1s linear infinite;
+        5px solid #3b82f6;
+
+      animation:
+        spin 1s linear infinite;
 
     }
 
     .loading-overlay h2{
 
       color:white;
-      font-size:22px;
+
+      font-size:20px;
 
     }
 
     .loading-overlay p{
 
-      color:rgba(255,255,255,.7);
+      color:rgba(
+        255,
+        255,
+        255,
+        .7
+      );
+
       font-size:14px;
 
     }
@@ -306,11 +481,15 @@
     @keyframes spin{
 
       from{
+
         transform:rotate(0deg);
+
       }
 
       to{
+
         transform:rotate(360deg);
+
       }
 
     }
@@ -323,13 +502,13 @@
 
       .topbar{
 
-        height:auto;
-
-        padding:14px;
+        padding:10px 14px;
 
         flex-direction:column;
+
         align-items:flex-start;
-        gap:14px;
+
+        gap:12px;
 
       }
 
@@ -342,15 +521,24 @@
       .brand-logo{
 
         width:42px;
+
         height:42px;
 
         font-size:18px;
 
+        border-radius:14px;
+
       }
 
-      .brand h1{
+      .brand-text h1{
 
-        font-size:17px;
+        font-size:22px;
+
+      }
+
+      .brand-text span{
+
+        font-size:11px;
 
       }
 
@@ -358,21 +546,41 @@
 
         width:100%;
 
-        flex-direction:column;
+        display:flex;
+
+        gap:8px;
 
       }
 
-      .status-pill,
+      .status-pill{
+
+        flex:1;
+
+        justify-content:center;
+
+        height:40px;
+
+        font-size:12px;
+
+      }
+
       .btn-open{
 
-        width:100%;
+        flex:1;
+
         justify-content:center;
+
+        height:40px;
+
+        font-size:12px;
+
+        padding:0 12px;
 
       }
 
       .content{
 
-        padding:10px;
+        padding:8px;
 
       }
 
@@ -387,25 +595,30 @@
   </style>
 
 </head>
+
 <body>
 
   <div class="app-shell">
 
     <!-- =========================
          TOPBAR
-    ========================== -->
+    ========================= -->
 
     <header class="topbar">
 
       <div class="brand">
 
         <div class="brand-logo">
+
           <i class="fa-solid fa-heart-pulse"></i>
+
         </div>
 
-        <div>
+        <div class="brand-text">
 
-          <h1>Rutas de la Salud</h1>
+          <h1>
+            Rutas de la Salud
+          </h1>
 
           <span>
             Plataforma Integral de Validación
@@ -415,11 +628,18 @@
 
       </div>
 
+      <!-- =========================
+           ACTIONS
+      ========================= -->
+
       <div class="topbar-actions">
 
         <div class="status-pill">
+
           <i class="fa-solid fa-circle-check"></i>
+
           Sistema en línea
+
         </div>
 
         <button
@@ -428,7 +648,8 @@
         >
 
           <i class="fa-solid fa-up-right-from-square"></i>
-          Abrir en ventana completa
+
+          Abrir completa
 
         </button>
 
@@ -438,11 +659,15 @@
 
     <!-- =========================
          CONTENT
-    ========================== -->
+    ========================= -->
 
     <main class="content">
 
       <div class="iframe-container">
+
+        <!-- =========================
+             LOADER
+        ========================= -->
 
         <div
           class="loading-overlay"
@@ -462,14 +687,23 @@
         </div>
 
         <!-- =========================
-             CAMBIAR URL
-        ========================== -->
+             IFRAME
+        ========================= -->
 
         <iframe
+
           id="appFrame"
+
           src="https://script.google.com/macros/s/AKfycbygGpH7uLsDAXknO53PoGf3VmuJos81x7KJcJ4iehEUqlE_Ej2k7QhuOXRQ2MwIARpE/exec"
-          allow="camera; microphone; fullscreen"
+
+          allow="
+            camera;
+            microphone;
+            fullscreen
+          "
+
           loading="lazy"
+
         ></iframe>
 
       </div>
@@ -478,21 +712,35 @@
 
   </div>
 
+  <!-- =========================
+       SCRIPT
+  ========================= -->
+
   <script>
 
-    /* =========================
-       LOADER
-    ========================= */
+    /*
+    =========================
+    FRAME
+    =========================
+    */
 
     const frame =
+
       document.getElementById(
         'appFrame'
       );
 
     const overlay =
+
       document.getElementById(
         'loadingOverlay'
       );
+
+    /*
+    =========================
+    LOADER
+    =========================
+    */
 
     frame.onload = () => {
 
@@ -500,15 +748,18 @@
 
         overlay.style.opacity = '0';
 
-        overlay.style.pointerEvents = 'none';
+        overlay.style.pointerEvents =
+          'none';
 
-      },900);
+      },800);
 
     };
 
-    /* =========================
-       ABRIR COMPLETO
-    ========================= */
+    /*
+    =========================
+    ABRIR COMPLETO
+    =========================
+    */
 
     function abrirSistema(){
 
@@ -525,4 +776,5 @@
   </script>
 
 </body>
+
 </html>
